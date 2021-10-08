@@ -9,7 +9,7 @@ form.addEventListener('submit', (e)=>{
     updateData.textContent = 'Loading...'
 
     const search = document.querySelector('.search').value; 
-    fetch(`http://localhost:3000/weather?address=${search}`).then((response)=>{
+    fetch(`/weather?address=${search}`).then((response)=>{
         response.json().then((data)=>{
             data.error ? updateData.textContent = `${data.error}` : updateData.textContent = data.location + ' ' + data.forecast
         })
